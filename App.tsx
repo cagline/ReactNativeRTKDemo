@@ -17,8 +17,9 @@ import {
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import { Provider } from 'react-redux';
-import {Counter} from './src/counter/Counter';
+import {Counter} from './src/features/counter/Counter';
 import {store} from "./src/store/store";
+import {Dog} from "./src/features/dog/Dog";
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -36,6 +37,7 @@ function App(): JSX.Element {
           />
           <View>
             <Counter />
+            <Dog />
           </View>
         </SafeAreaView>
       </Provider>

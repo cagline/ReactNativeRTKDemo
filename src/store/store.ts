@@ -1,5 +1,5 @@
 import {Action, configureStore, ThunkAction} from '@reduxjs/toolkit';
-import counterReducer from '../counter/counterSlice';
+import counterReducer from '../features/counter/counterSlice';
 import {combineReducers} from 'redux';
 import {apiSlice} from '../api/dogApiSlice';
 
