@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "reverse": "source ~/.bash_profile && adb reverse tcp:3000 tcp:3000",
+    "api": "npm run reverse && json-server --port 3000 --watch data/data.json"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",

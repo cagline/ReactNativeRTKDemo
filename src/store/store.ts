@@ -1,17 +1,19 @@
 import {Action, configureStore, ThunkAction} from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import {combineReducers} from 'redux';
-import {apiSlice} from '../api/dogApiSlice';
+import {apiSlice as dogApiSlice} from '../api/dogApiSlice';
+import {apiSlice as toDoApiSlice} from '../api/todoApiSlice';
 
 const reducers = combineReducers({
     counter: counterReducer,
-    [apiSlice.reducerPath]: apiSlice.reducer,
+    [dogApiSlice.reducerPath]: dogApiSlice.reducer,
+    [toDoApiSlice.reducerPath]: toDoApiSlice.reducer,
 });
 
 export const store = configureStore({
     reducer: reducers,
     middleware: getDefaultMiddleware =>
-        getDefaultMiddleware().concat(apiSlice.middleware),
+        getDefaultMiddleware().concat(dogApiSlice.middleware).concat(toDoApiSlice.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;

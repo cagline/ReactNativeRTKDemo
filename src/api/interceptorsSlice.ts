@@ -3,9 +3,10 @@ import {BaseQueryFn, FetchArgs, fetchBaseQuery, FetchBaseQueryError,} from '@red
 const DOG_API_KEY = "ef867ca0-a6f4-4871-9135-907d77e7a21f";
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'https://api.thedogapi.com/v1',
+    baseUrl: 'http://localhost:3000',
     prepareHeaders(headers) {
         headers.set('x-api-key', DOG_API_KEY);
+        headers.set('Content-Type', 'application/json')
         return headers;
     }
 });

@@ -16,7 +16,10 @@ export const apiSlice = createApi({
     baseQuery: baseQueryWithReauth,
     endpoints: builder => ({
         fetchBreed: builder.query<Breed[], number | void>({
-            query: (limit = 10) => `/breeds?limit=${limit}`,
+            query: (limit = 10) => ({
+                url : `/breeds`,
+                params: { limit }
+            }),
         }),
     }),
 });
