@@ -1,25 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-
-import {
-  SafeAreaView,
-  StatusBar,
-  useColorScheme,
-  View,
-  StyleSheet,
-} from 'react-native';
-
+import {SafeAreaView, StatusBar, useColorScheme, View,} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import { Provider } from 'react-redux';
 import {Counter} from './src/features/counter/Counter';
-import {store} from "./src/store/store";
 import {Todo} from "./src/features/todo/Todo";
+import {Provider} from "react-redux";
+import {store} from "./src/store/store";
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -29,7 +14,6 @@ function App(): JSX.Element {
   };
 
   return (
-      <Provider store={store}>
         <SafeAreaView style={backgroundStyle}>
           <StatusBar
             barStyle={isDarkMode ? 'light-content' : 'dark-content'}
@@ -40,8 +24,14 @@ function App(): JSX.Element {
             <Counter />
           </View>
         </SafeAreaView>
-      </Provider>
   );
 }
 
-export default App;
+const PreLoad = () => {
+    return (
+        <Provider store={store}>
+            <App />
+        </Provider>
+    );
+};
+export default PreLoad;
