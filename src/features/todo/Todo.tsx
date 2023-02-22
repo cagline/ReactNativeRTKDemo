@@ -40,7 +40,7 @@ export function Todo() {
                                 triggerUpdateToDoMutation({...todo,isDone: !todo.isDone });
                                 todo.isDone = !todo.isDone;
                             }}
-                            value={todo.isDone}
+                            value={!todo.isDone}
                         />
                         <Button title="Delete" onPress={()=>triggerDeleteToDoMutation(todo.id)}/>
                     </View>
