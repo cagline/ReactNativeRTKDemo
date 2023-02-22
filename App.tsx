@@ -19,7 +19,6 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import { Provider } from 'react-redux';
 import {Counter} from './src/features/counter/Counter';
 import {store} from "./src/store/store";
-import {Dog} from "./src/features/dog/Dog";
 import {Todo} from "./src/features/todo/Todo";
 
 function App(): JSX.Element {

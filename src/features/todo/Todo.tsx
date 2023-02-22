@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Image, ScrollView, Switch, Text, TextInput, View} from 'react-native';
+import {Button, ScrollView, Switch, Text, TextInput, View} from 'react-native';
 
 import {useLazyGetToDoQuery, useLazyGetToDosQuery, useCreateToDoMutation, useUpdateToDoMutation, useDeleteToDoMutation} from '../../api/todoApiSlice';
-import {changeIncrementAmount} from "../counter/counterSlice";
-
 
 export function Todo() {
 
@@ -14,11 +12,8 @@ export function Todo() {
     const [triggerDeleteToDoMutation] = useDeleteToDoMutation();
     const [todo, setTodo] = useState('');
 
-
-
     useEffect(()=>{
       triggerGetToDosQuery().unwrap()
-
     },[])
 
     return (

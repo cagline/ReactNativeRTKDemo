@@ -1,8 +1,6 @@
 import {createApi} from '@reduxjs/toolkit/query/react';
 import {baseQueryWithReauth} from './interceptorsSlice';
 
-//const DOG_API_KEY = 'ef867ca0-a6f4-4871-9135-907d77e7a21f';
-
 interface ToDo {
     id: number;
     isDone: boolean;
