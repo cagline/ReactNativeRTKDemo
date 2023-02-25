@@ -11,8 +11,7 @@ import {
 export function Todo() {
     const [triggerGetToDosQuery, {data: toDos}] = useLazyGetToDosQuery();
     // const [triggerGetToDoQuery, { data: mydata }] = useLazyGetToDoQuery();
-    const [triggerCreateToDoMutation, {data, isLoading, error, isError}] =
-        useCreateToDoMutation();
+    const [triggerCreateToDoMutation, {data, isLoading, error, isError}] = useCreateToDoMutation();
     const [triggerUpdateToDoMutation] = useUpdateToDoMutation();
     const [triggerDeleteToDoMutation] = useDeleteToDoMutation();
     const [todo, setTodo] = useState('');
